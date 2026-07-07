@@ -23,7 +23,18 @@ app.use("/api/website",websiteRouter)
 app.use("/api/billing",billingRouter)
 
 
-app.listen(port,()=>{
-    console.log(`your server is running in server: ${port}`)
-    CONNECTDB()
-})
+const startServer = async () => {
+  try {
+    await CONNECTDB();
+
+    app.listen(port, () => {
+      console.log(`Server running on ${port}`);
+    });
+
+  } catch (err) {
+    console.error("MongoDB Connection Failed");
+    console.error(err);
+  }
+};
+
+startServer();
