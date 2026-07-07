@@ -20,8 +20,15 @@ export default function LoginModel({ open, onClose }) {
         dispatch(setUserData(data))
         onClose()
     } catch (error) {
-        console.log(error)
+    console.log("ERROR:", error);
+
+    if (error.response) {
+        console.log("Status:", error.response.status);
+        console.log("Data:", error.response.data);
+    } else {
+        console.log(error.message);
     }
+}
     }
     return (
         <AnimatePresence>
