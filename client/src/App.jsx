@@ -9,7 +9,7 @@ import Editor from './pages/Editor'
 import WebsiteEditor from './pages/Editor'
 import LiveSite from './pages/LiveSite'
 import Pricing from './pages/Pricing'
-export const serverUrl="http://localhost:8000"
+export const serverUrl="https://websitebuilder-q5fl.onrender.com"
 
 export default function App() {
   useGetCurrentUser()
